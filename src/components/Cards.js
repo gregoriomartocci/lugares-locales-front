@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 
 function Cards() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     axios
@@ -12,11 +14,14 @@ function Cards() {
       .then((res) => {
         console.log(res);
         setPosts(res.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error);
       });
   }, []);
+
+  if (loading) return <h1>Cargando...</h1>;
 
   return (
     <div className="cards">
@@ -26,14 +31,13 @@ function Cards() {
           <ul className="cards__items">
             {posts.map((post) => (
               <li key={post.id}>
-                {console.log(`esto es un post${post}`)}
                 <CardItem
-                  src=""
+                  src={`${post.Image.url}`}
                   text={`${post.Title}`}
-                  label="Adventure"
-                  path="/single-post"
-                  content={`${post.Content}`}
-                />{" "}
+                  label="Aventura"
+                  path={`/single-post/article/${post.id}`}
+                  content={`${post.Description}`}
+                />
               </li>
             ))}
           </ul>

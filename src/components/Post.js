@@ -3,33 +3,22 @@ import "./Post.css";
 import Footer from "./Footer";
 import Cards from "./Cards";
 
-function Test() {
+function Test(props) {
+  
   return (
     <>
       <div className="container row center-xs">
-        
         <div className="Post">
           <div className="box_1">
-            <h1>Check Out The Most Awesome VR Headset in 2020</h1>
+            <h1>{props.title}</h1>
           </div>
           <div className="box_2">
-            <img src="/images/PATAGONIA 202.jpg" alt="img" />
+            <img className="post__item__img" src={props.src} alt="img" />
           </div>
           <div className="post__container">
-            <div className="breadcrumb">start</div>
-            <h1>I neglect my talents</h1>
-            <p className="text__block">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <div className="breadcrumb"></div>
+            <h1>Subtitulo</h1>
+            <p className="text__block">{props.content}</p>
 
             <div className="post__gallery">
               {/* Gallery Row*/}
@@ -38,7 +27,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -47,7 +36,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -56,7 +45,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -65,7 +54,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -74,7 +63,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -86,7 +75,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -95,7 +84,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -104,7 +93,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -113,7 +102,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -122,7 +111,7 @@ function Test() {
                   <div class="box">
                     <img
                       className="post__gallery__img"
-                      src="/images/PATAGONIA 202.jpg"
+                      src={props.src}
                       alt="img"
                     />
                   </div>
@@ -131,37 +120,15 @@ function Test() {
             </div>
 
             <div className="box_5">
-              <p className="text__block">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </p>
+              <p className="text__block">{props.Content}</p>
             </div>
 
             <div className="box_6">
-              <img src="/images/PATAGONIA 202.jpg" alt="img" />
+              <img src={props.src} alt="img" />
             </div>
 
             <div className="box_7">
-              <p className="text__block">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </p>
+              <p className="text__block">{props.Content}</p>
             </div>
           </div>
         </div>
@@ -169,7 +136,7 @@ function Test() {
         {/*Comment Section*/}
 
         <div class="post__comment__box">
-          <h1> Leave a Reply </h1>
+          <h1> Deja un comentario </h1>
 
           <textarea
             className="comment__text__area"
@@ -182,11 +149,8 @@ function Test() {
           </div>
 
           <div class="comment__button">
-            <button type="button submit">
-              Enviar
-            </button>
+            <button type="button submit">Enviar</button>
           </div>
-
         </div>
 
         <Cards></Cards>

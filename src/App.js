@@ -33,7 +33,7 @@ function App() {
 
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/single-post" exact component={SinglePost} />
+          <Route path="/single-post/article/:id" exact component={SinglePost}/>
           <Route path="/about-us" exact component={AboutUs} />
           <Route path="/highlights" exact component={Highlights} />
           <Route path="/places" exact component={Places} />
